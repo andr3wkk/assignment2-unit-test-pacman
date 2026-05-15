@@ -101,9 +101,14 @@ public class Main {
             for (int col = 0; col < map.getColCount(); col++) {
                 Position current = new Position(row, col);
 
-                if (playerPosition.equals(current)) {
+                boolean playerHere = playerPosition.equals(current);
+                boolean monsterHere = hasMonsterAt(monsters, current);
+
+                if (playerHere && monsterHere) {
+                    System.out.print('X');
+                } else if (playerHere) {
                     System.out.print('P');
-                } else if (hasMonsterAt(monsters, current)) {
+                } else if (monsterHere) {
                     System.out.print('M');
                 } else {
                     System.out.print(map.getTile(current));
