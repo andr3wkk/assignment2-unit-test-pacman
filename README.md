@@ -22,3 +22,20 @@ This project is a logic-based Pac-Man game implemented in Java for Assignment 2.
 ## Running Tests
 ```bash
 ./gradlew test
+```
+
+## Generating Coverage Report
+```bash
+./gradlew jacocoTestReport
+```
+
+## Running the Playable Console UI
+```bash
+./gradlew run
+```
+
+## AI Usage
+AI tools were used to help generate the initial code structure, improve logic, debug issues, and suggest test cases. All generated code was reviewed, understood, and tested before submission.
+
+## Notes
+This project focuses on Pac-Man game logic and automated testing. A simple playable console UI was added as an optional bonus.
