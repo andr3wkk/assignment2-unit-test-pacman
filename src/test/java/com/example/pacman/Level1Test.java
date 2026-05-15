@@ -41,6 +41,24 @@ public class Level1Test {
     }
 
     @Test
+    void shouldNotMovePlayerOutOfBounds() {
+        String[] map = {
+                "P  ",
+                " . ",
+                "   "
+        };
+
+        GameEngine engine = new GameEngine(map, 3);
+
+        boolean movedUp = engine.movePlayer(Direction.UP);
+        boolean movedLeft = engine.movePlayer(Direction.LEFT);
+
+        assertFalse(movedUp);
+        assertFalse(movedLeft);
+        assertEquals(new Position(0, 0), engine.getPlayer().getPosition());
+    }
+
+    @Test
     void shouldCollectCoinWhenSteppingOnCoin() {
         String[] map = {
                 "#####",

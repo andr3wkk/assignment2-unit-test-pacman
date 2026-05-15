@@ -51,4 +51,23 @@ public class Level2Test {
 
         assertFalse(engine.isLevelComplete());
     }
+
+    @Test
+    void shouldMoveMonsterAndReverseAtWall() {
+        String[] map = {
+                "#####",
+                "#P M#",
+                "#   #",
+                "#####"
+        };
+
+        GameEngine engine = new GameEngine(map, 3);
+
+        Position before = engine.getMonsters().get(0).getPosition();
+        engine.moveMonsters();
+        Position after = engine.getMonsters().get(0).getPosition();
+
+        assertEquals(new Position(1, 2), after);
+        assertNotEquals(before, after);
+    }
 }
